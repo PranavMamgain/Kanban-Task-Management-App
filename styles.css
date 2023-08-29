@@ -1,0 +1,421 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  /* color: whitesmoke; */
+}
+
+/* **************************** Toggle-Switch Button ************************* */
+/* Genel stil */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 24px;
+  margin: 10px;
+}
+
+/* Giriş stil */
+.toggle-switch .toggle-input {
+  display: none;
+}
+
+/* Anahtarın stilinin etrafındaki etiketin stil */
+.toggle-switch .toggle-label {
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 40px;
+  height: 24px;
+  background-color: #2196F3;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Anahtarın yuvarlak kısmının stil */
+.toggle-switch .toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+.toggle-switch .toggle-input:checked+.toggle-label {
+  background-color: #645FC7;
+}
+
+.toggle-switch .toggle-input:checked+.toggle-label::before {
+  transform: translateX(16px);
+}
+
+/* Light tema */
+.toggle-switch.light .toggle-label {
+  background-color: #BEBEBE;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label {
+  background-color: #9B9B9B;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label::before {
+  transform: translateX(6px);
+}
+
+/* Dark tema */
+.toggle-switch.dark .toggle-label {
+  background-color: #4B4B4B;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label {
+  background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label::before {
+  transform: translateX(16px);
+}
+
+/* ************************** Toggle-Switch Button end ************************** */
+
+body {
+  background-color: #21212D;
+  height: 100vh;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 100%;
+  max-height: fit-content;
+  position: relative;
+}
+
+header {
+  margin-left: 15rem;
+  background-color: rgba(44, 44, 56);
+  padding: 10px;
+  border-bottom: 2px solid #3B3B47;
+
+}
+
+.nav-item-left {
+  color: #C4C5CA !important;
+  padding: 20px;
+  margin-left: 1px;
+}
+
+.nav-item-right {
+  display: flex;
+  align-self: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sidebar {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 15.5rem;
+  position: absolute;
+  top: 0;
+  border-right: 2px solid #3B3B47;
+  background-color: #2C2C38;
+  /* transition: 4s; */
+}
+
+.side-content {
+  color: #818696 !important;
+  /* position: absolute;
+  top:15%; */
+  font-size: large;
+  margin-top: 20px;
+  /* margin-left: 25px; */
+
+}
+
+.content-list {
+  /* padding-top: 15px; */
+  margin-top: 10px;
+
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  /* position: relative;
+    top: 15px; */
+  color: white;
+  padding: 20px;
+  font-size: 25px;
+
+
+}
+
+.logo-img {
+  margin-right: 10px;
+}
+
+.side-bottom-container {
+  margin: 15px;
+}
+
+
+
+.dark-mode-toggle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #1c1c2a;
+  /* margin: 0px 15px 20px 15px; */
+
+}
+
+.sidebar-btn {
+  background-color: #2C2C38;
+  color: #818696 !important;
+  border: none;
+  margin-top: 1rem;
+  width: 8rem;
+  cursor: pointer;
+}
+
+.sidebar-btn>img {
+  width: 10px;
+  height: 10px;
+}
+
+
+
+.side-list>li {
+  /* list-style-image: url('icons/dashboard\ \(1\).png'); */
+  list-style-type: none;
+  /* margin: 0; */
+  border-radius: 0px 25px 25px 0px;
+  padding: 8px;
+  padding-left: 25px;
+
+}
+
+.side-list li:hover {
+  background-color: #645FC6;
+  cursor: pointer;
+  color: white;
+}
+
+.side-heading {
+  margin-left: 25px;
+
+}
+
+.list-img {
+  width: 20px;
+  height: 15px;
+}
+
+.inner-container {
+  margin-left: 250px;
+  padding: 5px 5px 5px 15px;
+  height: fit-content;
+  display: flex;
+  gap: 3rem;
+}
+
+.items {
+  margin: 10px 15px 10px 15px;
+  width: 180px;
+
+}
+
+.item-name {
+  text-transform: capitalize;
+  color: #E5E6EE;
+  font-family: monospace;
+  font-size: 20px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.counter{
+  margin-left: 10px;
+}
+
+.card {
+  color: white;
+  border-radius: 10px;
+  background-color: #2C2C38;
+  margin: 10px 0px;
+  padding: 15px;
+  white-space: normal;
+  word-break: break-word;
+  min-width: 220px;
+  max-width: 300px;
+
+}
+
+.card-text-big {
+  padding: 5px;
+}
+
+.card-text-small {
+  color: #7D8395;
+  padding: 5px;
+}
+
+#cyan {
+  background-color: #4AC7E8;
+}
+
+#purple {
+  background-color: #826FF0;
+}
+
+#green {
+  background-color: #6CE1AC;
+}
+
+.dot {
+  border-radius: 25px;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+
+}
+
+.task-btn {
+  border-radius: 25px;
+  background-color: #645FC6;
+  font-size: 16px;
+  color: white;
+  padding: 10px;
+  border: none;
+  transition: all ease-in-out 0.2s;
+}
+
+.task-btn:hover {
+  background-color: #514bb2;
+  cursor: pointer;
+}
+
+.hamburger{
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.popup {
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  padding:70px 500px 0px 500px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.4)
+
+}
+
+.popup-container {
+  color: #FCFCFF;
+  background-color: #2C2C38;
+  padding:20px 40px 40px 40px;
+  width: 470px;
+
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn{
+  align-self: flex-end;
+  cursor: pointer;
+}
+.newtaskform {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.newtaskform input, .newtaskform textarea, .newtaskform select{
+  background-color: #2C2C38;
+  border: 2px solid #393942 ;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+textarea{
+  resize: none;
+  color: white;
+}
+.newtaskform input:focus, .newtaskform textarea:focus, .newtaskform select:focus{
+  outline: none;
+}
+
+h4{
+  align-self: center;
+}
+
+.subtask-btn{
+  background-color: rgb(229, 226, 230);
+  cursor:pointer;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  color:#645FC6;
+}
+
+.taskcreatebtn{
+  background-color: #645FC6;
+  cursor:pointer;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  color:white;
+}
+.taskcreatebtn:hover{
+  background-color: #514bb2;
+}
+
+ul{
+  list-style-type: none;
+
+}
+
+.drop{
+  min-height: 250px;
+  max-height: 10cap;
+
+}
+input.subtasks {
+  width: 95%;
+  margin: 0px 5px 5px 0px;
+}
+
+.close-subTask{
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}

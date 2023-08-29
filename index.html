@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="listpopup">
+        div.
+    </div> -->
+    <div id="popup" class="popup">
+        <div class="popup-container">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h4>Add New Task</h4>
+            <form action="" class="newtaskform">
+                <label for="title">Title</label>
+                <input required placeholder="e.g. Take a coffee break" type="text" name="" id="title">
+
+                <label for="textbox">Description</label>
+                <textarea name="textbox" id="textbox" cols="30" rows="3"
+                    placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little."></textarea>
+
+                <label>Subtasks</label>
+                <ul id="subtaskList">
+                <li><input type="text" name="subtasks" class="subtasks"  ><span  class="close-subTask">&times;</span></li>
+                </ul>
+                <button type="button" class="subtask-btn" id="addSubTask">+ Add New Subtask</button>
+                <label for="status">Status</label>
+                <select name="status" id="status">
+                    <option selected value="Todo">Todo</option>
+                    <option value="Doing">Doing</option>
+                    <option value="Done">Done</option>
+                </select>
+
+                <button  onclick="storeData()" class="taskcreatebtn">Create Task</button>
+            </form>
+        </div>
+    </div>
+    <div class="main-container">
+        <header id="nav">
+            <nav class="navbar">
+                <div class="nav-container ">
+                    <div class="nav-item-left">
+                        <h3>Platform Launch</h3>
+                    </div>
+                    <div class="nav-item-right">
+                        <ul class="nav-links">
+                            <li><button class="task-btn" onclick="showPopup()"> + Add New Task</button></li>
+                            <li class="hamburger" onclick="openNav()"><img src="icons/menu-dots-vertical (1).png"
+                                    alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+        <div class="sidebar" id="show-sidebar">
+            <div class="side-top-container">
+                <div class="logo">
+                    <a class="logo-img" href="#"><img src="icons/books.png" alt="logo"></a>
+                    <h2 class="logo-text">kanban</h2>
+                </div>
+                <div class="side-content">
+                    <h5 class="side-heading">All boards (8)</h5>
+                    <div class="content-list">
+                        <ul class="side-list">
+                            <li>
+                                <div class="list-align̉"><img src="icons/dashboard (1).png" alt="" class="list-img">
+                                    Platform
+                                    Launch</div>
+                            </li>
+                            <li>
+                                <div class="list-align"><img src="icons/dashboard (1).png" alt="" class="list-img">
+                                    Marketing
+                                    Plan</div>
+                            </li>
+                            <li>
+                                <div class="list-align"><img src="icons/dashboard (1).png" alt="" class="list-img">
+                                    Roadmap
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-align"><img src="icons/dashboard (1).png" alt="" class="list-img">
+                                    Create New
+                                    Board</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-bottom-container">
+                <div class="dark-mode-toggle">
+                    <img src="icons/Sun (1).png" alt="">
+                    <div class="toggle-switch">
+                        <input class="toggle-input" id="toggle" type="checkbox">
+                        <label class="toggle-label" for="toggle"></label>
+                    </div>
+                    <img src="icons/Moon (1).png" alt="" class="">
+                </div>
+
+                <div class="hide-side">
+                    <button type="button" class="sidebar-btn" onclick="closeNav()"><img src="icons/left-chevron.png"
+                            alt=""> Hide
+                        Sidebar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-container" id="innerContainer">
+            <div class="items">
+                <p class="item-name"><span id="cyan" class="dot"></span>todo<span class="counter" id="todoCount">(4)</span></p>
+                <ul class="todo-list drop" id="Todo-list"  draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+                    
+                    
+                </ul>
+            </div>
+            <div class="items">
+                <p class="item-name"><span id="purple" class="dot"></span>doing <span class="counter" id="doingCount">(6)</span></p>
+                <ul class="doing-list drop" id="Doing-list" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    
+                </ul>
+            </div>
+            <div class="items">
+                <p class="item-name"><span id="green" class="dot"></span>done <span class="counter" id="doneCount">(7)</span></p>
+                <ul class="done-list drop" id="Done-list" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="index.js"></script>
+</html>
